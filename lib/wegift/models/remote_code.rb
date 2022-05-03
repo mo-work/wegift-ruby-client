@@ -14,8 +14,9 @@ module Wegift
 
     def self.get(url)
       uri = URI(url)
-      conn = Faraday.new(url: "#{uri.scheme}://#{uri.host}") do |con|
-        con.use FaradayMiddleware::FollowRedirects, limit: 5
+      conn = Faraday.new(url: "#{uri.scheme}://#{uri.host}") do |c|
+        c.adapter :net_http
+        c.use FaradayMiddleware::FollowRedirects, limit: 5
       end
 
       response =  conn.get("#{uri.path}?format=json") do |req|
