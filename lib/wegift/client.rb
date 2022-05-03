@@ -22,8 +22,8 @@ module Wegift
       @api_secret = options[:api_secret]
 
       @connection = Faraday.new(url: @api_host) do |c|
-        c.basic_auth(@api_key, @api_secret)
-        c.adapter Faraday.default_adapter
+        c.request :basic_auth, @api_key, @api_secret
+        c.adapter :net_http
         unless options[:proxy].nil?
           c.options[:proxy] = {
             uri: URI(options[:proxy])
