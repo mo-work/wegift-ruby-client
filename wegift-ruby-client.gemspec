@@ -20,7 +20,8 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.4.0'
 
-  spec.add_dependency 'faraday', '>= 1.0.0', '< 3.0'
+  spec.add_dependency 'faraday', '>= 2.0.0', '< 3.0'
+  spec.add_dependency 'faraday-net_http', '>= 2.0.0', '< 3.0'
   spec.add_dependency 'faraday-follow_redirects', '>= 0.3.0', '< 1.0'
   spec.add_dependency 'json', '~> 2.3', '>= 2.3.0'
 

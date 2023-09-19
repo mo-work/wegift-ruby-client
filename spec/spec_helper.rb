@@ -40,3 +40,7 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+require "faraday"
+require "faraday/net_http"
+Faraday.default_adapter = :net_http
