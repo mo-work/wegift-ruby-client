@@ -13,10 +13,10 @@ module Wegift
   class Client
     attr_accessor :api_host, :api_path, :api_key, :api_secret, :connection
 
-    # supported: basic-http-auth - see: https://playground.wegift.io
+    # supported: basic-http-auth - see: https://playground.plum.io
 
     def initialize(options = {})
-      @api_host = options[:api_host] || 'https://playground.wegift.io'
+      @api_host = options[:api_host] || 'https://playground.plum.io'
       @api_path = options[:api_path] || '/api/b2b-sync/v1'
       @api_key = options[:api_key].to_s
       @api_secret = options[:api_secret]

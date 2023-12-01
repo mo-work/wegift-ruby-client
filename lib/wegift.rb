@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require 'wegift/version'
-require 'wegift/client'
+require 'plum/version'
+require 'plum/client'
 
-require 'wegift/models/initializable'
-require 'wegift/models/response'
-require 'wegift/models/product'
-require 'wegift/models/products'
-require 'wegift/models/order'
-require 'wegift/models/stock'
+require 'plum/models/initializable'
+require 'plum/models/response'
+require 'plum/models/product'
+require 'plum/models/products'
+require 'plum/models/order'
+require 'plum/models/stock'
 
 module Wegift
 end

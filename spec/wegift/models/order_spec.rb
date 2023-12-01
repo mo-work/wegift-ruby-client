@@ -17,7 +17,7 @@ RSpec.describe Wegift::Order do
     )
   end
 
-  let(:client) { set_wegift_client }
+  let(:client) { set_plum_client }
 
   it 'should set payload' do
     order = set_order('1', 'direct', 'raw', '3', '4', '5')
@@ -31,7 +31,7 @@ RSpec.describe Wegift::Order do
 
   describe 'POST' do
     it 'should return error (404)' do
-      client = set_wegift_client
+      client = set_plum_client
       order = set_order('NOPE', '2', '3', '4', '5', '6')
 
       VCR.use_cassette('post_order_invalid_404') do
@@ -45,7 +45,7 @@ RSpec.describe Wegift::Order do
     end
 
     it 'should return error (401)' do
-      client = set_wegift_client
+      client = set_plum_client
       order = set_order(
         'tTV',
         Wegift::Order::DELIVERY_METHODS[:direct],
@@ -67,7 +67,7 @@ RSpec.describe Wegift::Order do
     end
 
     it 'should create a code' do
-      client = set_wegift_client
+      client = set_plum_client
 
       VCR.use_cassette('get_product_catalogue_valid') do
         product = client.products.all[1]
@@ -97,7 +97,7 @@ RSpec.describe Wegift::Order do
     end
 
     it 'should create an url' do
-      client = set_wegift_client
+      client = set_plum_client
 
       VCR.use_cassette('get_product_catalogue_valid') do
         product = client.products.all[1]

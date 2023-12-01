@@ -1,13 +1,13 @@
-# WeGift Ruby Client
+# Xoxoday Plum Ruby Client
 
-A simple client for [WeGift.io][wegift] B2B Synchronous API (Document Version 1.7).
+A simple client for [https://www.xoxoday.com/plum][Xoxoday Plum] B2B Synchronous API (Document Version 1.7).
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'wegift-ruby-client'
+gem 'plum-ruby-client'
 ```
 
 And then execute:
@@ -17,7 +17,7 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install wegift-ruby-client
+$ gem install plum-ruby-client
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ Simple example for ordering a Digital Card
 ```ruby
 # a simple client
 client = Wegift::Client.new(
-      :api_host => 'https://playground.wegift.io',
+      :api_host => 'https://playground.plum.io',
       :api_path => '/api/b2b-sync/v1',
       :api_key => ENV['AUTH_NAME'],
       :api_secret => ENV['AUTH_PASS'],
@@ -107,12 +107,12 @@ Start the VCR with `rspec` - this should add all Tapes to `spec/tapes`.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/kendrikat/wegift-ruby-client. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/kendrikat/plum-ruby-client. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-[wegift]: http://WeGift.io
+[plum]: https://www.xoxoday.com/plum
 [vcr]: https://github.com/vcr/vcr

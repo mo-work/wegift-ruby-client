@@ -6,12 +6,12 @@ RSpec.describe Wegift::Product do
   describe 'GET' do
     describe 'all' do
       let(:code) { 'ARGOS-GB' }
-      let(:client) { set_wegift_client }
+      let(:client) { set_plum_client }
       let(:product) { client.product(code) }
       let(:products) { client.products }
 
       context 'when unauthenticated' do
-        let(:client) { set_wegift_client_unauthed }
+        let(:client) { set_plum_client_unauthed }
 
         it 'should return an error' do
           VCR.use_cassette('get_product_catalogue_invalid_401') do

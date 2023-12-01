@@ -7,7 +7,7 @@ RSpec.describe Wegift::Stock do
     let(:stock) { client.stock('BLUMEN-DE') }
 
     context 'not authenticated' do
-      let(:client) { set_wegift_client_unauthed }
+      let(:client) { set_plum_client_unauthed }
 
       it 'returns an error status' do
         VCR.use_cassette('get_stock_invalid_401') do
@@ -23,7 +23,7 @@ RSpec.describe Wegift::Stock do
     end
 
     context 'authenticated' do
-      let(:client) { set_wegift_client }
+      let(:client) { set_plum_client }
 
       it 'returns a success status' do
         VCR.use_cassette('get_stock_valid') do

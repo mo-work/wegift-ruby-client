@@ -3,11 +3,11 @@
 require 'bundler/setup'
 require 'byebug'
 require 'dotenv/load'
-require 'wegift/client'
+require 'plum/client'
 require 'webmock/rspec'
 require 'vcr'
 
-def set_wegift_client
+def set_plum_client
   Wegift::Client.new(
     api_key: ENV['AUTH_NAME'],
     api_secret: ENV['AUTH_PASS'],
@@ -16,7 +16,7 @@ def set_wegift_client
   )
 end
 
-def set_wegift_client_unauthed
+def set_plum_client_unauthed
   Wegift::Client.new(
     test_mode: true
   )
