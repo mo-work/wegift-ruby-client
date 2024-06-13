@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'faraday'
-require 'faraday_middleware'
+require 'faraday/follow_redirects'
 require 'uri'
 
 module Wegift
@@ -15,7 +15,7 @@ module Wegift
     def get(ctx)
       conn = Faraday.new(url: url) do |c|
         c.adapter :net_http
-        c.use FaradayMiddleware::FollowRedirects, limit: 5
+        c.use Faraday::FollowRedirects::Middleware, limit: 5
       end
       parse(conn.get("#{url}?format=json") { |r| r.headers['Accept'] = 'application/json' })
     end
