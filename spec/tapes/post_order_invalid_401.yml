@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://playground.wegift.io/api/b2b-sync/v1/order-digital-card
+    uri: https://playground.runa.io/api/b2b-sync/v1/order-digital-card
     body:
       encoding: UTF-8
       string: '{"product_code":"tTV","currency_code":"GBP","amount":"0","delivery_method":"direct","delivery_format":"raw","notification_email":null,"delivery_email":null,"external_ref":null}'

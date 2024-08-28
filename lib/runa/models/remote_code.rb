@@ -4,7 +4,7 @@ require 'faraday'
 require 'faraday_middleware'
 require 'uri'
 
-module Wegift
+module Runa
   class RemoteCode < Response
     attr_accessor :url
 

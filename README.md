@@ -1,13 +1,13 @@
-# WeGift Ruby Client
+# Runa Ruby Client
 
-A simple client for [WeGift.io][wegift] B2B Synchronous API (Document Version 1.7).
+A simple client for [Runa.io][runa] B2B Synchronous API (Document Version 1.7).
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'wegift-ruby-client'
+gem 'runa-ruby-client'
 ```
 
 And then execute:
@@ -17,7 +17,7 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install wegift-ruby-client
+$ gem install runa-ruby-client
 ```
 
 ## Usage
@@ -25,8 +25,8 @@ $ gem install wegift-ruby-client
 Simple example for ordering a Digital Card
 ```ruby
 # a simple client
-client = Wegift::Client.new(
-      :api_host => 'https://playground.wegift.io',
+client = Runa::Client.new(
+      :api_host => 'https://playground.runa.io',
       :api_path => '/api/b2b-sync/v1',
       :api_key => ENV['AUTH_NAME'],
       :api_secret => ENV['AUTH_PASS'],
@@ -107,12 +107,12 @@ Start the VCR with `rspec` - this should add all Tapes to `spec/tapes`.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/kendrikat/wegift-ruby-client. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mo-work/runa-ruby-client. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-[wegift]: http://WeGift.io
+[runa]: http://Runa.io
 [vcr]: https://github.com/vcr/vcr

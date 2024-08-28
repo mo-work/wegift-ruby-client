@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Wegift::Products < Wegift::Response
+class Runa::Products < Runa::Response
   PATH = '/products'
 
   attr_accessor :all
@@ -14,7 +14,7 @@ class Wegift::Products < Wegift::Response
 
   # Find all products by fieldname.
   def find(name, value)
-    Wegift::Products.new(all: all.select! { |p| p.send(name).eql?(value) })
+    Runa::Products.new(all: all.select! { |p| p.send(name).eql?(value) })
   end
 
   def parse(response)
@@ -23,7 +23,7 @@ class Wegift::Products < Wegift::Response
     if is_successful?
       # TODO: separate?
       if @payload['products']
-        @all = @payload['products'].map { |p| Wegift::Product.new(p) }
+        @all = @payload['products'].map { |p| Runa::Product.new(p) }
       end
     else
       @all = []

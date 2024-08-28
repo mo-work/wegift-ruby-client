@@ -2,11 +2,11 @@
 
 require 'spec_helper'
 
-RSpec.describe Wegift::RemoteCode do
+RSpec.describe Runa::RemoteCode do
   describe 'GET' do
-    let(:url) { 'https://playground.wegift.io/public/gifts/instant/c02bd09f-2c17-4bb6-ad5d-38f4143a01d0' }
+    let(:url) { 'https://playground.runa.io/public/gifts/instant/c02bd09f-2c17-4bb6-ad5d-38f4143a01d0' }
     let(:remote_code) { client.remote_code(url) }
-    let(:client) { set_wegift_client }
+    let(:client) { set_runa_client }
 
     context 'when URL is invalid' do
       let(:url) { 'https://thisnotworking.yo' }
@@ -33,11 +33,11 @@ RSpec.describe Wegift::RemoteCode do
       end
     end
 
-    context 'when URL is valid but not known to wegift' do
-      let(:url) { 'https://playground.wegift.io/public/gifts/instant/c02bd09f-0000-0000-0000-38f4143a01d1' }
+    context 'when URL is valid but not known to runa' do
+      let(:url) { 'https://playground.runa.io/public/gifts/instant/c02bd09f-0000-0000-0000-38f4143a01d1' }
 
       it 'is not successful' do
-        VCR.use_cassette('get_remote_code_invalid_unknown_wegift_url') do
+        VCR.use_cassette('get_remote_code_invalid_unknown_runa_url') do
           expect(remote_code.is_successful?).to be false
           expect(remote_code.error_code).to eq 404
           expect(remote_code.error_string).to eq "Not Found"

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Wegift::Stock < Wegift::Response
+class Runa::Stock < Runa::Response
   PATH = '/stock'
 
   # request/payload

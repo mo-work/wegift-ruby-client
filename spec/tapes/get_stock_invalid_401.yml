@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://playground.wegift.io/api/b2b-sync/v1/stock/BLUMEN-DE
+    uri: https://playground.runa.io/api/b2b-sync/v1/stock/BLUMEN-DE
     body:
       encoding: US-ASCII
       string: ''

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Wegift::Order < Wegift::Response
+class Runa::Order < Runa::Response
   PATH = '/order-digital-card'
 
   DELIVERY_METHODS = { direct: 'direct', email: 'email' }.freeze

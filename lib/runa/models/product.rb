@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Wegift::Product < Wegift::Response
+class Runa::Product < Runa::Response
   PATH = '/products'
 
   # request/payload
@@ -38,6 +38,6 @@ class Wegift::Product < Wegift::Response
   def parse(response)
     super(response)
 
-    Wegift::Product.new(@payload)
+    Runa::Product.new(@payload)
   end
 end

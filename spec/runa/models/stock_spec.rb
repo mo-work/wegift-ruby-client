@@ -2,16 +2,16 @@
 
 require 'spec_helper'
 
-RSpec.describe Wegift::Stock do
+RSpec.describe Runa::Stock do
   describe 'GET' do
     let(:stock) { client.stock('BLUMEN-DE') }
 
     context 'not authenticated' do
-      let(:client) { set_wegift_client_unauthed }
+      let(:client) { set_runa_client_unauthed }
 
       it 'returns an error status' do
         VCR.use_cassette('get_stock_invalid_401') do
-          expect(stock.status).to eq(Wegift::Response::STATUS[:error])
+          expect(stock.status).to eq(Runa::Response::STATUS[:error])
         end
       end
 
@@ -23,11 +23,11 @@ RSpec.describe Wegift::Stock do
     end
 
     context 'authenticated' do
-      let(:client) { set_wegift_client }
+      let(:client) { set_runa_client }
 
       it 'returns a success status' do
         VCR.use_cassette('get_stock_valid') do
-          expect(stock.status).to eq(Wegift::Response::STATUS[:success])
+          expect(stock.status).to eq(Runa::Response::STATUS[:success])
         end
       end
 

@@ -3,12 +3,12 @@
 require 'bundler/setup'
 require 'byebug'
 require 'dotenv/load'
-require 'wegift/client'
+require 'runa/client'
 require 'webmock/rspec'
 require 'vcr'
 
-def set_wegift_client
-  Wegift::Client.new(
+def set_runa_client
+  Runa::Client.new(
     api_key: ENV['AUTH_NAME'],
     api_secret: ENV['AUTH_PASS'],
     proxy: ENV['PROXY'],
@@ -16,8 +16,8 @@ def set_wegift_client
   )
 end
 
-def set_wegift_client_unauthed
-  Wegift::Client.new(
+def set_runa_client_unauthed
+  Runa::Client.new(
     test_mode: true
   )
 end

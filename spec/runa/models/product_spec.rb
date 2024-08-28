@@ -2,31 +2,31 @@
 
 require 'spec_helper'
 
-RSpec.describe Wegift::Product do
+RSpec.describe Runa::Product do
   describe 'GET' do
     describe 'all' do
       let(:code) { 'ARGOS-GB' }
-      let(:client) { set_wegift_client }
+      let(:client) { set_runa_client }
       let(:product) { client.product(code) }
       let(:products) { client.products }
 
       context 'when unauthenticated' do
-        let(:client) { set_wegift_client_unauthed }
+        let(:client) { set_runa_client_unauthed }
 
         it 'should return an error' do
           VCR.use_cassette('get_product_catalogue_invalid_401') do
-            expect(products.class).to eq(Wegift::Products)
-            expect(products.status).to eq(Wegift::Response::STATUS[:error])
+            expect(products.class).to eq(Runa::Products)
+            expect(products.status).to eq(Runa::Response::STATUS[:error])
           end
         end
       end
 
       it 'should return a set of products' do
         VCR.use_cassette('get_product_catalogue_valid') do
-          expect(products.class).to eq(Wegift::Products)
+          expect(products.class).to eq(Runa::Products)
           expect(products.all.is_a?(Array)).to eq(true)
-          expect(products.all.first.class).to eq(Wegift::Product)
-          expect(products.status).to eq(Wegift::Response::STATUS[:success])
+          expect(products.all.first.class).to eq(Runa::Product)
+          expect(products.status).to eq(Runa::Response::STATUS[:success])
         end
       end
 
@@ -38,7 +38,7 @@ RSpec.describe Wegift::Product do
           VCR.use_cassette('get_product_item_valid') do
             product = client.product(product_from_catalogue.code)
 
-            expect(product.class).to eq(Wegift::Product)
+            expect(product.class).to eq(Runa::Product)
             expect(product.code).to eq(product_from_catalogue.code)
           end
         end
@@ -46,7 +46,7 @@ RSpec.describe Wegift::Product do
 
       it 'should have instructions' do
         VCR.use_cassette('get_product_item_valid_with_instructions') do
-          expect(product.class).to eq(Wegift::Product)
+          expect(product.class).to eq(Runa::Product)
           expect(product.code).to eq(code)
           expect(product.redeem_instructions_html).not_to eq(nil)
         end

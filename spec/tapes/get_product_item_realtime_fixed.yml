@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://playground.wegift.io/api/b2b-sync/v1/products/800PET-US
+    uri: https://playground.runa.io/api/b2b-sync/v1/products/800PET-US
     body:
       encoding: US-ASCII
       string: ''
@@ -58,7 +58,7 @@ http_interactions:
       - 725895942df0070e-LHR
     body:
       encoding: ASCII-8BIT
-      string: '{"availability":"realtime","available_denominations":["25.00","50.00"],"available_in_days":1,"barcode_format":null,"card_image_url":"https://playground.wegift.io/static/product_assets_static/PLACEHOLDER/PLACEHOLDER-card.png","categories":["department-stores"],"code":"800PET-US","countries":["US"],"currency_code":"USD","denomination_type":"fixed","description":"The
+      string: '{"availability":"realtime","available_denominations":["25.00","50.00"],"available_in_days":1,"barcode_format":null,"card_image_url":"https://playground.runa.io/static/product_assets_static/PLACEHOLDER/PLACEHOLDER-card.png","categories":["department-stores"],"code":"800PET-US","countries":["US"],"currency_code":"USD","denomination_type":"fixed","description":"The
         1-800-PetSupplies.com staff features some of the leading authorities in the
         pet world. We are dedicated to you and your pets, creating the best place
         online to meet others, learn the new and exciting, blog, shop and easily find
@@ -81,7 +81,7 @@ http_interactions:
         to these Terms and Conditions for the benefit of a child between the ages
         of 14 and 18, please be advised that you are fully responsible for his or
         her use of this site, including all financial charges and legal liability
-        that he or she may incur.</p>","terms_and_conditions_pdf_url":"https://playground.wegift.io/public/terms/800PET-US.pdf","terms_and_conditions_url":"https://playground.wegift.io/public/terms/800PET-US.pdf","wrap_supported":false}
+        that he or she may incur.</p>","terms_and_conditions_pdf_url":"https://playground.runa.io/public/terms/800PET-US.pdf","terms_and_conditions_url":"https://playground.runa.io/public/terms/800PET-US.pdf","wrap_supported":false}
 
 '
     http_version: 

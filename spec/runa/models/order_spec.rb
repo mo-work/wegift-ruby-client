@@ -2,10 +2,10 @@
 
 require 'spec_helper'
 
-RSpec.describe Wegift::Order do
+RSpec.describe Runa::Order do
   def set_order(product_code, delivery_method, delivery_format,
                 amount, currency_code, external_ref)
-    Wegift::Order.new(
+    Runa::Order.new(
       product_code: product_code,
       currency_code: currency_code,
       amount: amount,
@@ -17,7 +17,7 @@ RSpec.describe Wegift::Order do
     )
   end
 
-  let(:client) { set_wegift_client }
+  let(:client) { set_runa_client }
 
   it 'should set payload' do
     order = set_order('1', 'direct', 'raw', '3', '4', '5')
@@ -31,25 +31,25 @@ RSpec.describe Wegift::Order do
 
   describe 'POST' do
     it 'should return error (404)' do
-      client = set_wegift_client
+      client = set_runa_client
       order = set_order('NOPE', '2', '3', '4', '5', '6')
 
       VCR.use_cassette('post_order_invalid_404') do
         order.post(client)
 
-        expect(order.class).to eq(Wegift::Order)
+        expect(order.class).to eq(Runa::Order)
         expect(order.is_successful?).to eq(false)
-        expect(order.status).to eq(Wegift::Response::STATUS[:error])
+        expect(order.status).to eq(Runa::Response::STATUS[:error])
         expect(order.error_string).to eq('Field has invalid value')
       end
     end
 
     it 'should return error (401)' do
-      client = set_wegift_client
+      client = set_runa_client
       order = set_order(
         'tTV',
-        Wegift::Order::DELIVERY_METHODS[:direct],
-        Wegift::Order::DELIVERY_FORMATS[:code],
+        Runa::Order::DELIVERY_METHODS[:direct],
+        Runa::Order::DELIVERY_FORMATS[:code],
         '0',
         'GBP',
         nil
@@ -58,16 +58,16 @@ RSpec.describe Wegift::Order do
       VCR.use_cassette('post_order_invalid_401') do
         order.post(client)
 
-        expect(order.class).to eq(Wegift::Order)
+        expect(order.class).to eq(Runa::Order)
         expect(order.is_successful?).to eq(false)
-        expect(order.status).to eq(Wegift::Response::STATUS[:error])
+        expect(order.status).to eq(Runa::Response::STATUS[:error])
         expect(order.error_string).to eq('Field has invalid value')
         expect(order.order_id).to eq(nil)
       end
     end
 
     it 'should create a code' do
-      client = set_wegift_client
+      client = set_runa_client
 
       VCR.use_cassette('get_product_catalogue_valid') do
         product = client.products.all[1]
@@ -82,9 +82,9 @@ RSpec.describe Wegift::Order do
             #:delivery_format => 'raw', # default
           )
 
-          expect(order.class).to eq(Wegift::Order)
+          expect(order.class).to eq(Runa::Order)
           expect(order.is_successful?).to eq(true)
-          expect(order.status).to eq(Wegift::Response::STATUS[:success])
+          expect(order.status).to eq(Runa::Response::STATUS[:success])
           expect(order.error_string).to eq(nil)
           expect(order.amount).to eq(10)
 
@@ -97,7 +97,7 @@ RSpec.describe Wegift::Order do
     end
 
     it 'should create an url' do
-      client = set_wegift_client
+      client = set_runa_client
 
       VCR.use_cassette('get_product_catalogue_valid') do
         product = client.products.all[1]
@@ -112,9 +112,9 @@ RSpec.describe Wegift::Order do
             delivery_format: 'url-instant'
           )
 
-          expect(order.class).to eq(Wegift::Order)
+          expect(order.class).to eq(Runa::Order)
           expect(order.is_successful?).to eq(true)
-          expect(order.status).to eq(Wegift::Response::STATUS[:success])
+          expect(order.status).to eq(Runa::Response::STATUS[:success])
           expect(order.error_string).to eq(nil)
           expect(order.amount).to eq(10)
           expect(order.delivery_url).not_to eq(nil)

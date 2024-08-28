@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://playground.wegift.io/public/gifts/instant/c02bd09f-2c17-4bb6-ad5d-38f4143a01d0?format=json
+    uri: https://playground.runa.io/public/gifts/instant/c02bd09f-2c17-4bb6-ad5d-38f4143a01d0?format=json
     body:
       encoding: US-ASCII
       string: ''
@@ -58,7 +58,7 @@ http_interactions:
       - 701df67a98ff7260-HAM
     body:
       encoding: ASCII-8BIT
-      string: '{"e_code":{"amount":"1.00","barcode_format":"code-128","barcode_string":"4919168309531457","code":"4919168309531457","error_code":null,"error_string":null,"expiry_date":"2025-04-05","pin":"038572","status":"SUCCESS","type":"code","url":"https://playground.wegift.io/public/gifts/instant/c02bd09f-2c17-4bb6-ad5d-38f4143a01d0"},"error_code":null,"error_details":null,"error_string":null,"order_id":"O-74PXWGBK","status":"SUCCESS"}
+      string: '{"e_code":{"amount":"1.00","barcode_format":"code-128","barcode_string":"4919168309531457","code":"4919168309531457","error_code":null,"error_string":null,"expiry_date":"2025-04-05","pin":"038572","status":"SUCCESS","type":"code","url":"https://playground.runa.io/public/gifts/instant/c02bd09f-2c17-4bb6-ad5d-38f4143a01d0"},"error_code":null,"error_details":null,"error_string":null,"order_id":"O-74PXWGBK","status":"SUCCESS"}
 
         '
     http_version: 

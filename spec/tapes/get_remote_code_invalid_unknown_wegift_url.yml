@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://playground.wegift.io/public/gifts/instant/c02bd09f-0000-0000-0000-38f4143a01d1?format=json
+    uri: https://playground.runa.io/public/gifts/instant/c02bd09f-0000-0000-0000-38f4143a01d1?format=json
     body:
       encoding: US-ASCII
       string: ''

@@ -2,7 +2,7 @@
 
 require_relative 'initializable'
 
-class Wegift::Response
+class Runa::Response
   include Initializable
 
   STATUS = { success: 'SUCCESS', error: 'ERROR' }.freeze

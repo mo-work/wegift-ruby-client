@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://playground.wegift.io/api/b2b-sync/v1/order-digital-card
+    uri: https://playground.runa.io/api/b2b-sync/v1/order-digital-card
     body:
       encoding: UTF-8
       string: '{"product_code":"NOPE","currency_code":"5","amount":"4","delivery_method":"2","delivery_format":"3","notification_email":null,"delivery_email":null,"external_ref":"6"}'

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://playground.wegift.io/api/b2b-sync/v1/order-digital-card
+    uri: https://playground.runa.io/api/b2b-sync/v1/order-digital-card
     body:
       encoding: UTF-8
       string: '{"product_code":"1800BAS-US","currency_code":"USD","amount":10,"delivery_method":"direct","delivery_format":"url-instant","notification_email":null,"delivery_email":null,"external_ref":"1650961890.3513324"}'
@@ -58,7 +58,7 @@ http_interactions:
       - 701df666cdad4174-HAM
     body:
       encoding: ASCII-8BIT
-      string: '{"e_code":{"delivery_url":"https://playground.wegift.io/public/gifts/instant/2e2d51af-5a06-4ed8-9cfc-34d862f85f40","error_code":null,"error_string":null,"expiry_date":"3000-01-01","status":"SUCCESS"},"e_codes":[{"delivery_url":"https://playground.wegift.io/public/gifts/instant/2e2d51af-5a06-4ed8-9cfc-34d862f85f40","error_code":null,"error_string":null,"expiry_date":"3000-01-01","status":"SUCCESS"}],"error_code":null,"error_details":null,"error_string":null,"order_id":"O-7VJA8GJV","status":"SUCCESS"}
+      string: '{"e_code":{"delivery_url":"https://playground.runa.io/public/gifts/instant/2e2d51af-5a06-4ed8-9cfc-34d862f85f40","error_code":null,"error_string":null,"expiry_date":"3000-01-01","status":"SUCCESS"},"e_codes":[{"delivery_url":"https://playground.runa.io/public/gifts/instant/2e2d51af-5a06-4ed8-9cfc-34d862f85f40","error_code":null,"error_string":null,"expiry_date":"3000-01-01","status":"SUCCESS"}],"error_code":null,"error_details":null,"error_string":null,"order_id":"O-7VJA8GJV","status":"SUCCESS"}
 
         '
     http_version: 
