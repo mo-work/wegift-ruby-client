@@ -1,24 +1,18 @@
 # frozen_string_literal: true
 
 class Runa::Product < Runa::Response
-  PATH = '/products'
+  PATH = '/product'
 
   # request/payload
   attr_accessor :product_code
 
   # response/success
-  attr_accessor :code, :name, :description, :currency_code, :availability,
-                :denomination_type, :minimum_value, :maximum_value,
-                :available_denominations, :card_image_url, :expiry_date_policy,
-                :redeem_instructions_html,
-                :terms_and_conditions_html,
-                :terms_and_conditions_url,
-                :terms_and_conditions_pdf_url,
-                :e_code_usage_type,
-                :barcode_format,
-                :countries,
+  attr_accessor :code, :name, :description, :currency, :availability,
+                :countries_redeemable_in,
                 :categories,
-                :state
+                :state,
+                :gift_card,
+                :subscription
 
   def initialize(params = {})
     super
@@ -29,7 +23,7 @@ class Runa::Product < Runa::Response
   end
 
   # Product Details List
-  # GET /api/b2b-sync/v1/products/ID
+  # GET /v2/product/ID
   def get(ctx)
     response = ctx.request(:get, path)
     parse(response)
