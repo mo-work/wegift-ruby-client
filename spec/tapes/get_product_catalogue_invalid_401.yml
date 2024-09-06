@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://playground.runa.io/api/b2b-sync/v1/products
+    uri: https://playground.runa.io/v2/product
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.5
+      - Faraday v1.10.3
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -21,49 +21,30 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Tue, 26 Apr 2022 08:31:32 GMT
+      - Mon, 02 Sep 2024 12:18:42 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '117'
+      - '187'
       Connection:
       - keep-alive
-      Cache-Control:
-      - must-revalidate, no-store, no-cache, private
-      Referrer-Policy:
-      - same-origin
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - Cookie, Accept-Encoding
-      Www-Authenticate:
-      - Basic realm="Login Required"
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Permitted-Cross-Domain-Policies:
-      - master-only
-      X-Xss-Protection:
-      - 1; mode=block
+      X-Amzn-Requestid:
+      - c7eb0dc8-9cd8-4419-9a06-75053268bb13
+      X-Amzn-Errortype:
+      - UnauthorizedException
+      X-Amz-Apigw-Id:
+      - def9fE8lDoEElTg=
       Cf-Cache-Status:
-      - BYPASS
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=m8b1PGIVL3zy9dGqp5jBIG%2FalS6Zbunc1xYlsjW%2Fn5Dnaejq4GhHNpzq3eheZ4RxmPZUMSwxzzPSgzQat20S88QgiUc3Dgbgd2BnYRqvg8ZlfHoI3VFech%2FFtVYoA8rdJFazvqDqIPyCqrJ2wDYmYTBQ"}],"group":"cf-nel","max_age":604800}'
-      Nel:
-      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      - DYNAMIC
       Server:
       - cloudflare
       Cf-Ray:
-      - 701df6749b347272-HAM
+      - 8bcd71b94eaeb393-MAN
     body:
       encoding: UTF-8
-      string: '{"error_code":"SE001","error_details":"Invalid credentials","error_string":"Authentication
-        failed","status":"ERROR"}
-
-        '
-    http_version: 
-  recorded_at: Tue, 26 Apr 2022 08:31:32 GMT
+      string: "{  \n   \"type\": \"unauthorized\",\n   \"message\": \"Missing or invalid
+        'X-Api-Key' header\",\n   \"help\": \"Generate a key on https://app.runa.io/api-keys
+        and pass using the 'X-Api-Key' header.\"\n}\n"
+    http_version:
+  recorded_at: Mon, 02 Sep 2024 12:18:42 GMT
 recorded_with: VCR 3.0.3

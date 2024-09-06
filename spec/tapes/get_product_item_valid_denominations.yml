@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://playground.runa.io/v2/product/ABBON-IT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+      Content-Type:
+      - application/json
+      X-Execution-Mode:
+      - sync
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 05 Sep 2024 11:33:49 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - 802f2973-58bf-4276-92d7-30a2143ed6b0
+      X-Amzn-Remapped-Content-Length:
+      - '1704'
+      X-Api-Version:
+      - '2024-02-05'
+      X-Amz-Apigw-Id:
+      - doSMsHqnjoEEVmw=
+      X-Amzn-Trace-Id:
+      - Root=1-66d9971d-751a5dd10415a5790af534d5;Parent=0e56ee43ef43c98a;Sampled=0;lineage=1:3ef3cab0:0
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8be5e8196c66b3c3-MAN
+    body:
+      encoding: ASCII-8BIT
+      string: '{"approval_state":"APPROVED","discount_multiplier":"0.0070","code":"ABBON-IT","name":"Abbonamenti.it","categories":["entertainment"],"countries_redeemable_in":["IT"],"currency":"EUR","customer_service":{"phone_number":null,"website_url":"https://www.abbonamenti.it/contatti"},"state":"LIVE","payout_type":"gift_card","is_orderable":true,"availability":"realtime","gift_card":{"barcode_format":"DATA_MATRIX","e_code_usage_type":"url-recommended","denominations":{"available_list":["20","25","30"],"minimum_value":"20.00","maximum_value":"30.00","type":"fixed"},"redeemable_at":"all","balance_check_url":null,"website_url":"https://www.abbonamenti.it/regali","assets":{"card_image_url":"https://gift.runa.io/static/product_assets/ABBON-IT/ABBON-IT-card.png","icon_image_url":"https://gift.runa.io/static/product_assets/ABBON-IT/ABBON-IT-logo.png","primary_color":"#FFFFFF"},"expiry":{"date_policy":"Expires
+        6 months from issue date","in_months":6,"type":"from-issue-date"},"content_resources":{"description_markdown_url":"https://d2vjldeiu1zgxb.cloudfront.net/resources/ABBON-IT/description.md","disclaimer_markdown_url":null,"locale":"en_GB","refund_policy_markdown_url":"https://d2vjldeiu1zgxb.cloudfront.net/resources/ABBON-IT/refund_policy_markdown.md","reissuance_policy_markdown_url":"https://d2vjldeiu1zgxb.cloudfront.net/resources/ABBON-IT/reissuance_policy_markdown.md","terms_buyer_markdown_url":"https://d2vjldeiu1zgxb.cloudfront.net/resources/ABBON-IT/terms_buyer.md","terms_consumer_markdown_url":"https://d2vjldeiu1zgxb.cloudfront.net/resources/ABBON-IT/terms_consumer.md","redemption_instructions_markdown_url":"https://d2vjldeiu1zgxb.cloudfront.net/resources/ABBON-IT/redeem_markdown.md"}}}'
+    http_version:
+  recorded_at: Thu, 05 Sep 2024 11:33:49 GMT
+recorded_with: VCR 3.0.3

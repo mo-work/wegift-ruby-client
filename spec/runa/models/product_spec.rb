@@ -5,7 +5,7 @@ require 'spec_helper'
 RSpec.describe Runa::Product do
   describe 'GET' do
     describe 'all' do
-      let(:code) { 'ARGOS-GB' }
+      let(:code) { '1800FL-US' }
       let(:client) { set_runa_client }
       let(:product) { client.product(code) }
       let(:products) { client.products }
@@ -16,7 +16,7 @@ RSpec.describe Runa::Product do
         it 'should return an error' do
           VCR.use_cassette('get_product_catalogue_invalid_401') do
             expect(products.class).to eq(Runa::Products)
-            expect(products.status).to eq(Runa::Response::STATUS[:error])
+            expect(products.status).to eq(Runa::Response::STATUS[:failed])
           end
         end
       end
@@ -26,7 +26,7 @@ RSpec.describe Runa::Product do
           expect(products.class).to eq(Runa::Products)
           expect(products.all.is_a?(Array)).to eq(true)
           expect(products.all.first.class).to eq(Runa::Product)
-          expect(products.status).to eq(Runa::Response::STATUS[:success])
+          expect(products.status).to eq(Runa::Response::STATUS[:completed])
         end
       end
 
@@ -45,53 +45,54 @@ RSpec.describe Runa::Product do
       end
 
       it 'should have instructions' do
-        VCR.use_cassette('get_product_item_valid_with_instructions') do
+        VCR.use_cassette('get_product_item_valid') do
           expect(product.class).to eq(Runa::Product)
           expect(product.code).to eq(code)
-          expect(product.redeem_instructions_html).not_to eq(nil)
+          expect(product.gift_card['content_resources']['redemption_instructions_markdown_url']).not_to eq(nil)
         end
       end
 
       it 'should have usage type' do
-        VCR.use_cassette('get_product_item_valid_url_only') do
+        VCR.use_cassette('get_product_item_valid') do
           # this should exist, can be null, "url-only/url-recommended" (ARGOS-GB / DECA-BE)
-          expect(product.e_code_usage_type).to eq('url-only')
+          expect(product.gift_card['e_code_usage_type']).to eq('url-recommended')
         end
       end
 
       it 'should have countries' do
-        VCR.use_cassette('get_product_item_valid_url_only') do
-          expect(product.countries).to eq(["GB"])
+        VCR.use_cassette('get_product_item_valid') do
+          expect(product.countries_redeemable_in).to eq(['US'])
         end
       end
 
       it 'should have categories' do
-        VCR.use_cassette('get_product_item_valid_url_only') do
-          expect(product.categories).to include('entertainment')
+        VCR.use_cassette('get_product_item_valid') do
+          expect(product.categories).to include('department-stores')
         end
       end
 
       it 'should have a state' do
-        VCR.use_cassette('get_product_item_valid_url_only') do
+        VCR.use_cassette('get_product_item_valid') do
           expect(product.state).to eq('LIVE')
         end
       end
 
       context 'realtime availability' do
         context 'fixed denomination type' do
-          let(:code) { '800PET-US' }
+          let(:code) { 'ABBON-IT' }
 
           it 'should have available denominations' do
-            VCR.use_cassette('get_product_item_realtime_fixed') do
-              expect(product.available_denominations).to match_array(['25.00', '50.00'])
+            VCR.use_cassette('get_product_item_valid_denominations') do
+              expect(product.gift_card['denominations']['type']).to eq('fixed')
+              expect(product.gift_card['denominations']['available_list']).to match_array(['20', '25', '30'])
             end
           end
         end
 
         context 'open denomination type' do
           it 'should not have available denominations' do
-            VCR.use_cassette('get_product_item_valid_url_only') do
-              expect(product.available_denominations).to be_nil
+            VCR.use_cassette('get_product_item_valid') do
+              expect(product.gift_card['denominations']['type']).to eq('open')
             end
           end
         end

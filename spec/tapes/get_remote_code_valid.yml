@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://playground.runa.io/public/gifts/instant/c02bd09f-2c17-4bb6-ad5d-38f4143a01d0?format=json
+    uri: https://connect.playground.runa.io/public/gifts/instant/db38667b-055e-446e-ac0f-bbf4b9227a95?format=json
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.5
+      - Faraday v1.10.3
       Accept:
       - application/json
       Accept-Encoding:
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 26 Apr 2022 08:31:33 GMT
+      - Thu, 05 Sep 2024 12:17:01 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -38,29 +38,21 @@ http_interactions:
       - Cookie
       X-Content-Type-Options:
       - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
       X-Permitted-Cross-Domain-Policies:
       - master-only
       X-Xss-Protection:
       - 1; mode=block
       Cf-Cache-Status:
       - DYNAMIC
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=FAcumfDx1EdH8zzpRz3mBnaDS%2B4U8pUTqXk%2BqFfnFKD%2FVb1SIidHJGFIk8wg1LTBEtTIZs7DAjbu88jQvj%2FB4PD71811A7%2BmRItzpPKeCseDMe%2BNdEzKFIcwbSmlN6mnhGKrCj%2FsoLrS1iRwUVCjmIdx"}],"group":"cf-nel","max_age":604800}'
-      Nel:
-      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 701df67a98ff7260-HAM
+      - 8be6275fdce22dd5-MAN
     body:
       encoding: ASCII-8BIT
-      string: '{"e_code":{"amount":"1.00","barcode_format":"code-128","barcode_string":"4919168309531457","code":"4919168309531457","error_code":null,"error_string":null,"expiry_date":"2025-04-05","pin":"038572","status":"SUCCESS","type":"code","url":"https://playground.runa.io/public/gifts/instant/c02bd09f-2c17-4bb6-ad5d-38f4143a01d0"},"error_code":null,"error_details":null,"error_string":null,"order_id":"O-74PXWGBK","status":"SUCCESS"}
+      string: '{"e_code":{"amount":"0.01","barcode_format":"code-128","barcode_string":"2553847550730045","code":"2553847550730045","error_code":null,"error_string":null,"expiry_date":"2027-09-05","pin":"082145","status":"SUCCESS","type":"code","url":"https://spend.playground.runa.io/db38667b-055e-446e-ac0f-bbf4b9227a95"},"error_code":null,"error_details":null,"error_string":null,"order_id":"O-VJJLWJPV","status":"SUCCESS"}
 
         '
-    http_version: 
-  recorded_at: Tue, 26 Apr 2022 08:31:33 GMT
+    http_version:
+  recorded_at: Thu, 05 Sep 2024 12:17:01 GMT
 recorded_with: VCR 3.0.3

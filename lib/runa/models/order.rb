@@ -1,19 +1,17 @@
 # frozen_string_literal: true
 
 class Runa::Order < Runa::Response
-  PATH = '/order-digital-card'
+  PATH = '/order'
 
   DELIVERY_METHODS = { direct: 'direct', email: 'email' }.freeze
   DELIVERY_FORMATS = { code: 'raw', url: 'url-instant' }.freeze
 
   # request/payload
-  attr_accessor :product_code, :currency_code, :amount, :delivery_method,
-                :delivery_format, :notification_email, :delivery_email,
-                :external_ref
+  attr_accessor :payment_type, :currency, :face_value, :distribution_type, :product_code, :external_ref
 
   # response/success
-  attr_accessor :code, :expiry_date, :pin, :order_id, :cvc2, :delivery_url,
-                :barcode_format, :barcode_string
+  attr_accessor :code, :order_id, :status, :created_at, :payment_method, :currency, :total_price,   
+                :total_discount, :items, :redemption_url, :order_id
 
   def initialize(params = {})
     super(params)
@@ -24,68 +22,56 @@ class Runa::Order < Runa::Response
 
   def payload
     {
-      product_code: @product_code,
-      currency_code: @currency_code,
-      amount: @amount,
-      delivery_method: @delivery_method,
-      delivery_format: @delivery_format,
-      notification_email: @notification_email,
-      delivery_email: @delivery_email,
-      external_ref: @external_ref
+      payment_method: {
+        type: @payment_type,
+        currency: @currency
+      },
+      items: [
+        {
+          face_value: @face_value,
+          distribution_method: {
+            type: @distribution_type
+          },
+          products: {
+              type: "SINGLE",
+              value: @product_code
+          }
+        }
+      ],
     }
   end
 
-  # Order Digital Card
-  # POST /api/b2b-sync/v1/order-digital-card
+  # Create a new order
+  # POST /v2/order
   def post(ctx)
-    response = ctx.request(:post, PATH, payload)
+    response = ctx.request(:post, PATH, payload, @external_ref)
     parse(response)
   end
 
   def parse(response)
     super(response)
 
-    # nested status/error object
-    # assuming root "status" is always "SUCCESS" if "e_code" is set
-    # {
-    #  "e_code": {
-    #    "error_code": "EC001",
-    #    "error_string": "Error retrieving E-Code from data processor",
-    #    "status": "ERROR"
-    #   },
-    #  "error_code": null,
-    #  "error_details": null,
-    #  "error_string": null,
-    #  "order_id": 18,
-    #  "status": "SUCCESS"
-    # }
-
-    # override root "status" if set
-    if @payload['e_code'] && @payload['e_code']['status'].eql?(STATUS[:error])
-      @status = @payload['e_code']['status']
-      unless @payload['e_code']['error_code'].blank?
-        @error_code = @payload['e_code']['error_code']
+    if @payload['status'].eql?(STATUS[:failed])
+      @status = @payload['status']
+      unless @payload['type'].blank?
+        @type = @payload['type']
       end
-      unless @payload['e_code']['error_string'].blank?
-        @error_string = @payload['e_code']['error_string']
+      unless @payload['message'].blank?
+        @message = @payload['message']
       end
-      unless @payload['e_code']['error_details'].blank?
-        @error_details = @payload['e_code']['error_details']
+      unless @payload['help'].blank?
+        @help = @payload['help']
       end
     end
 
     # set valid data
-    if @payload['e_code'] && @payload['e_code']['status'].eql?(STATUS[:success])
-      @code = @payload['e_code']['code']
-      @expiry_date = @payload['e_code']['expiry_date']
-      @pin = @payload['e_code']['pin']
-      @cvc2 = @payload['e_code']['cvc2']
-      @delivery_url = @payload['e_code']['delivery_url']
-      @barcode_string = @payload['e_code']['barcode_string']
-      @barcode_format = @payload['e_code']['barcode_format']
+    if @payload['status'] && @payload['status'].eql?(STATUS[:completed])
+      @status = @payload['status']
+      @total_price = @payload['total_price']
+      @items = @payload['items']
     end
 
-    @order_id = @payload['order_id']
+    @order_id = @payload['id']
 
     self
   end

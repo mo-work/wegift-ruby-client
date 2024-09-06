@@ -2,15 +2,17 @@
 http_interactions:
 - request:
     method: post
-    uri: https://playground.runa.io/api/b2b-sync/v1/order-digital-card
+    uri: https://playground.runa.io/v2/order
     body:
       encoding: UTF-8
-      string: '{"product_code":"1800BAS-US","currency_code":"USD","amount":10,"delivery_method":"direct","delivery_format":"url-instant","notification_email":null,"delivery_email":null,"external_ref":"1650961890.3513324"}'
+      string: '{"payment_method":{"type":"ACCOUNT_BALANCE","currency":"USD"},"items":[{"face_value":10,"distribution_method":{"type":"PAYOUT_LINK","template_id":"DT-01HPSF51G0ZWHJ3JTNWRH0WDYK"},"products":{"type":"SINGLE","value":"1800FL-US"}}],"description":null}'
     headers:
       User-Agent:
-      - Faraday v0.17.5
+      - Faraday v1.10.3
       Content-Type:
       - application/json
+      X-Execution-Mode:
+      - sync
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,46 +23,32 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 26 Apr 2022 08:31:31 GMT
+      - Wed, 04 Sep 2024 08:49:23 GMT
       Content-Type:
       - application/json
-      Content-Length:
-      - '225'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
-      Cache-Control:
-      - must-revalidate, no-store, no-cache, private
-      Referrer-Policy:
-      - same-origin
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - Accept-Encoding, Cookie
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Permitted-Cross-Domain-Policies:
-      - master-only
-      X-Xss-Protection:
-      - 1; mode=block
+      X-Amzn-Requestid:
+      - 7bf3ba60-73ac-45b2-8f7a-3c25f0cad159
+      X-Amzn-Remapped-Content-Length:
+      - '879'
+      X-Api-Version:
+      - '2024-02-05'
+      X-Amz-Apigw-Id:
+      - dknLCHK-joEEB1A=
+      X-Amzn-Trace-Id:
+      - Root=1-66d81f13-56e5a4a95b8c590201688692;Sampled=1;lineage=2:3ef3cab0:0
       Cf-Cache-Status:
       - DYNAMIC
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=JDTHVGopaLMpbREaZi4KpiLWgs9SUJ3qo1ilpDPuimadc0oPGjX6%2Bz%2F%2BmZTqsCaigCsWAwvo0Ufev3Vn%2FHi5WVePTKf1mA9segyUOsgyhPa0EBKEy9GyGTZwroHxHMi8NKW%2BsLu9Jb0XTip65Zu5x2IA"}],"group":"cf-nel","max_age":604800}'
-      Nel:
-      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 701df666cdad4174-HAM
+      - 8bdcb9d6f8deb32b-MAN
     body:
       encoding: ASCII-8BIT
-      string: '{"e_code":{"delivery_url":"https://playground.runa.io/public/gifts/instant/2e2d51af-5a06-4ed8-9cfc-34d862f85f40","error_code":null,"error_string":null,"expiry_date":"3000-01-01","status":"SUCCESS"},"e_codes":[{"delivery_url":"https://playground.runa.io/public/gifts/instant/2e2d51af-5a06-4ed8-9cfc-34d862f85f40","error_code":null,"error_string":null,"expiry_date":"3000-01-01","status":"SUCCESS"}],"error_code":null,"error_details":null,"error_string":null,"order_id":"O-7VJA8GJV","status":"SUCCESS"}
-
-        '
-    http_version: 
-  recorded_at: Tue, 26 Apr 2022 08:31:31 GMT
+      string: '{"id":"O-01J6Y3JRYWCTNDRHP35302NZ30","status":"COMPLETED","created_at":"2024-09-04T08:49:23.420733+00:00","completed_at":"2024-09-04T08:49:24.420733+00:00","description":null,"payment_method":{"type":"ACCOUNT_BALANCE"},"currency":"USD","total_discount":"0.00","total_price":"10.00","items":[{"id":"E-01J6Y3JRYWRKYDTEHDDM9P2KV0","distribution_method":{"type":"PAYOUT_LINK","template_id":"DT-01HPSF51G0ZWHJ3JTNWRH0WDYK"},"products":{"type":"SINGLE","value":"1800FL-US"},"face_value":"10.00","price":"10.00","discount_multiplier":"0.0","redemption_url":"https://spend.playground.runa.io/4c77f610-fda9-4b7f-a06e-0c6feb10f604","payout":{"status":"ACTIVE","status_updated_at":"2024-09-04T08:49:24.420733+00:00","url":"https://spend.playground.runa.io/4c77f610-fda9-4b7f-a06e-0c6feb10f604","expiry_date":null},"currency":"USD"}],"transaction_detail":{"USD":{"value":"10.00","fx":null}}}'
+    http_version:
+  recorded_at: Wed, 04 Sep 2024 08:49:23 GMT
 recorded_with: VCR 3.0.3

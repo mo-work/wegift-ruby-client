@@ -9,8 +9,15 @@ require 'vcr'
 
 def set_runa_client
   Runa::Client.new(
-    api_key: ENV['AUTH_NAME'],
-    api_secret: ENV['AUTH_PASS'],
+    api_key: ENV['API_KEY'],
+    proxy: ENV['PROXY'],
+    test_mode: true
+  )
+end
+
+def set_runa_client_bad_auth
+  Runa::Client.new(
+    api_key: 'asdfasdfasdf',
     proxy: ENV['PROXY'],
     test_mode: true
   )
@@ -28,7 +35,8 @@ VCR.configure do |c|
 
   c.before_record do |i|
     i.response.headers.delete("Set-Cookie")
-    i.request.headers.delete("Authorization")
+    i.request.headers.delete("X-Api-Key")
+    i.request.headers.delete("X-Idempotency-Key")
   end
 end
 

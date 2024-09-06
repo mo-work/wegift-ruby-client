@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 class Runa::Products < Runa::Response
-  PATH = '/products'
+  PATH = '/product'
 
   attr_accessor :all
 
   # Product Details List
-  # GET /api/b2b-sync/v1/products/
+  # GET /v2/product
   def get(ctx)
-    response = ctx.request(:get, PATH)
+    response = ctx.request(:get, PATH, {}, '')
     parse(response)
   end
 
@@ -22,8 +22,8 @@ class Runa::Products < Runa::Response
 
     if is_successful?
       # TODO: separate?
-      if @payload['products']
-        @all = @payload['products'].map { |p| Runa::Product.new(p) }
+      if @payload['catalog']
+        @all = @payload['catalog'].map { |p| Runa::Product.new(p) }
       end
     else
       @all = []
