@@ -38,7 +38,8 @@ module Runa
         req.headers['X-Api-Version'] = '2024-02-05'.freeze
         req.headers['X-Execution-Mode'] = 'sync'.freeze
         if method.eql? :post
-          req.headers['X-Idempotency-Key'] = key unless key.empty?
+          raise StandardError('Required idempotency key missing') if key.blank?
+          req.headers['X-Idempotency-Key'] = key
         end
         req.body = payload.to_json if method.to_sym.eql?(:post)
         req.params = payload if method.to_sym.eql?(:get)
