@@ -31,7 +31,7 @@ class Runa::Response
       @error_string = @payload['message']
       @error_details = @payload['help']
     else
-      @payload = JSON.parse(response.body)
+      @payload = JSON.parse(response.body) unless !response['content-type'].eql?('application/json')
       @status = STATUS[:failed]
       @error_code = response.status
       @error_string = response.reason_phrase

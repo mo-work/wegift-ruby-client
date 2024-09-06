@@ -28,50 +28,51 @@ RSpec.describe Runa::Order do
   end
 
   describe 'POST' do
-    it 'should return error (401)' do
-      client = set_runa_client_unauthed
-      order = set_order(
-        '1',
-        '2',
-        '3',
-        '4',
-        '5',
-        '6'
-      )
+    context 'when api credentials are invalid' do
+      it 'should return error (401)' do
+        client = set_runa_client_unauthed
+        order = set_order(
+          '1',
+          '2',
+          '3',
+          '4',
+          '5',
+          '6'
+        )
 
-      VCR.use_cassette('post_order_invalid_401') do
-        order.post(client)
+        VCR.use_cassette('post_order_invalid_401') do
+          order.post(client)
 
-        expect(order.class).to eq(Runa::Order)
-        expect(order.is_successful?).to eq(false)
-        expect(order.status).to eq(Runa::Response::STATUS[:failed])
-        expect(order.error_string).to eq('Unauthorized')
-        expect(order.order_id).to eq(nil)
+          expect(order.class).to eq(Runa::Order)
+          expect(order.is_successful?).to eq(false)
+          expect(order.status).to eq(Runa::Response::STATUS[:failed])
+          expect(order.error_string).to eq('Unauthorized')
+          expect(order.order_id).to eq(nil)
+        end
+      end
+      
+      it 'should return error (403)' do
+        client = set_runa_client_bad_auth
+        order = set_order(
+          '1',
+          '2',
+          '3',
+          '4',
+          '5',
+          '6'
+        )
+
+        VCR.use_cassette('post_order_invalid_403') do
+          order.post(client)
+
+          expect(order.class).to eq(Runa::Order)
+          expect(order.is_successful?).to eq(false)
+          expect(order.status).to eq(Runa::Response::STATUS[:failed])
+          expect(order.error_string).to eq("Forbidden")
+          expect(order.order_id).to eq(nil)
+        end
       end
     end
-    
-    it 'should return error (403)' do
-      client = set_runa_client_bad_auth
-      order = set_order(
-        '1',
-        '2',
-        '3',
-        '4',
-        '5',
-        '6'
-      )
-
-      VCR.use_cassette('post_order_invalid_403') do
-        order.post(client)
-
-        expect(order.class).to eq(Runa::Order)
-        expect(order.is_successful?).to eq(false)
-        expect(order.status).to eq(Runa::Response::STATUS[:failed])
-        expect(order.error_string).to eq("Forbidden")
-        expect(order.order_id).to eq(nil)
-      end
-    end
-
     it 'should create an url' do
       client = set_runa_client
 
