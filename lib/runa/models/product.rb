@@ -25,7 +25,7 @@ class Runa::Product < Runa::Response
   # Product Details List
   # GET /v2/product/ID
   def get(ctx)
-    response = ctx.request(:get, path)
+    response = ctx.request(:get, path, {}, '')
     parse(response)
   end
 

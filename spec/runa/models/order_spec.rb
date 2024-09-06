@@ -1,22 +1,24 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
+require 'securerandom'
 
 RSpec.describe Runa::Order do
-  def set_order(payment_type, currency, face_value, distribution_type, product_code)
+  def set_order(payment_type, currency, face_value, distribution_type, product_code, external_ref)
     Runa::Order.new(
       payment_type: payment_type,
       currency: currency,
       face_value: face_value,
       distribution_type: distribution_type,
-      product_code: product_code
+      product_code: product_code,
+      external_ref: external_ref
     )
   end
 
   let(:client) { set_runa_client }
 
   it 'should set payload' do
-    order = set_order('1', '2', '3', '4', '5')
+    order = set_order('1', '2', '3', '4', '5', '6')
 
     expect(order.payment_type).to eq('1')
     expect(order.currency).to eq('2')
@@ -33,7 +35,8 @@ RSpec.describe Runa::Order do
         '2',
         '3',
         '4',
-        '5'
+        '5',
+        '6'
       )
 
       VCR.use_cassette('post_order_invalid_401') do
@@ -54,7 +57,8 @@ RSpec.describe Runa::Order do
         '2',
         '3',
         '4',
-        '5'
+        '5',
+        '6'
       )
 
       VCR.use_cassette('post_order_invalid_403') do
@@ -80,7 +84,8 @@ RSpec.describe Runa::Order do
             currency: 'USD',
             face_value: 10,
             distribution_type: 'PAYOUT_LINK',
-            product_code: '1800FL-US'
+            product_code: '1800FL-US',
+            external_ref: SecureRandom.uuid
           )
 
           expect(order.class).to eq(Runa::Order)
@@ -88,7 +93,6 @@ RSpec.describe Runa::Order do
           expect(order.status).to eq(Runa::Response::STATUS[:completed])
           expect(order.error_string).to eq(nil)
           expect(order.total_price).to eq("10.00")
-          # expect(order.redemption_url).not_to eq(nil)
           expect(order.order_id).not_to eq(nil)
         end
       end
