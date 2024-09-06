@@ -30,13 +30,14 @@ module Runa
       end
     end
 
-    def request(method, path, payload = {})
+    def request(method, path, payload = {}, key = '')
       @connection.send(method) do |req|
         req.url [@api_path, path].join
         req.headers['Content-Type'] = 'application/json'
         req.headers['X-Api-Key'] = @api_key
-        req.headers['X-Idempotency-Key'] = SecureRandom.uuid
-        req.headers['X-Execution-Mode'] = 'sync'
+        req.headers['X-Api-Version'] = '2024-02-05'
+        req.headers['X-Execution-Mode'] = 'sync'.freeze
+        req.headers['X-Idempotency-Key'] = key if method.eql? :post 
         req.body = payload.to_json if method.to_sym.eql?(:post)
         req.params = payload if method.to_sym.eql?(:get)
       end

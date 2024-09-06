@@ -43,7 +43,7 @@ RSpec.describe Runa::Order do
         expect(order.is_successful?).to eq(false)
         expect(order.status).to eq(Runa::Response::STATUS[:failed])
         expect(order.error_string).to eq('Unauthorized')
-        expect(order.id).to eq(nil)
+        expect(order.order_id).to eq(nil)
       end
     end
     
@@ -64,7 +64,7 @@ RSpec.describe Runa::Order do
         expect(order.is_successful?).to eq(false)
         expect(order.status).to eq(Runa::Response::STATUS[:failed])
         expect(order.error_string).to eq("Forbidden")
-        expect(order.id).to eq(nil)
+        expect(order.order_id).to eq(nil)
       end
     end
 

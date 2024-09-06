@@ -7,10 +7,10 @@ class Runa::Order < Runa::Response
   DELIVERY_FORMATS = { code: 'raw', url: 'url-instant' }.freeze
 
   # request/payload
-  attr_accessor :payment_type, :currency, :face_value, :distribution_type, :product_code
-  
+  attr_accessor :payment_type, :currency, :face_value, :distribution_type, :product_code, :external_ref
+
   # response/success
-  attr_accessor :code, :id, :status, :created_at, :payment_method, :currency, :total_price,   
+  attr_accessor :code, :order_id, :status, :created_at, :payment_method, :currency, :total_price,   
                 :total_discount, :items, :redemption_url, :order_id
 
   def initialize(params = {})
@@ -44,7 +44,7 @@ class Runa::Order < Runa::Response
   # Create a new order
   # POST /v2/order
   def post(ctx)
-    response = ctx.request(:post, PATH, payload)
+    response = ctx.request(:post, PATH, payload, @external_ref)
     parse(response)
   end
 
