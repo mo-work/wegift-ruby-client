@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://playground.wegift.io/api/b2b-sync/v1/products/BLUMEN-DE
+    uri: https://playground.runa.io/v2/product/1800FL-US
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.17.5
+      - Faraday v1.10.3
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -21,60 +21,33 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 26 Apr 2022 08:31:33 GMT
+      - Mon, 02 Sep 2024 12:18:42 GMT
       Content-Type:
       - application/json
-      Content-Length:
-      - '919'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
-      Cache-Control:
-      - must-revalidate, no-store, no-cache, private
-      Referrer-Policy:
-      - same-origin
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Vary:
-      - Accept-Encoding, Cookie
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Permitted-Cross-Domain-Policies:
-      - master-only
-      X-Xss-Protection:
-      - 1; mode=block
+      X-Amzn-Requestid:
+      - 007bf6dc-f896-4d01-8afb-dffc048cf409
+      X-Amzn-Remapped-Content-Length:
+      - '1674'
+      X-Api-Version:
+      - '2024-02-05'
+      X-Amz-Apigw-Id:
+      - def9aF0AjoEEZkQ=
+      X-Amzn-Trace-Id:
+      - Root=1-66d5ad22-3b42ac0b76fca0eb5daf0132;Parent=535d4b0cf47a58f7;Sampled=0;lineage=1:3ef3cab0:0
       Cf-Cache-Status:
-      - BYPASS
-      Accept-Ranges:
-      - bytes
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=0vynTg6Zy2qbLQz1L%2BMxF5QV6mN%2Fwd2bWn%2BJ7VAnVTKDB8hJU826JK0w4B%2Blc2v2ryoOvY6cD2rLibw47TenTMuNTD%2FBKcsXFXhcEuxVAEkC1WsIGjvw4x85WYL0bLW4%2BInpGdYkZOOP3UvqZW3SiA0%2B"}],"group":"cf-nel","max_age":604800}'
-      Nel:
-      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      - DYNAMIC
       Server:
       - cloudflare
       Cf-Ray:
-      - 701df676386bd463-HAM
+      - 8bcd71b65950b31c-MAN
     body:
       encoding: ASCII-8BIT
-      string: '{"availability":"stocked","available_denominations":["15.00","20.00","25.00","50.00","100.00"],"available_in_days":3,"barcode_format":null,"card_image_url":"https://playground.wegift.io/static/product_assets/BLUMEN-DE/BLUMEN-DE-card.png","categories":["food-and-drink","home-and-diy"],"code":"BLUMEN-DE","countries":["DE"],"currency_code":"EUR","denomination_type":"fixed","description":"Es
-        gibt viele Anl\u00e4sse bei denen ein herrlicher frischer Blumenstrau\u00df
-        die Augen der Beschenkten blitzen l\u00e4sst. Blumen verschicken war noch
-        nie so einfach wie mit 123 Blumenversand. Ob es ein sch\u00f6ner bunter Blumenstrau\u00df
-        zum Geburtstag  oder ein roter Rosenstrau\u00df f\u00fcr die Geliebte sein
-        soll, f\u00fcr Sie versenden wir alle Blumen an Ihre Wunschlieferadresse.\r\nAls
-        online Blumenversand verstehen wir es Ihre Zimmerpflanzen, Gestecke oder Blumenstr\u00e4u\u00dfe
-        so zu versenden, dass wir die Frische Ihrer Blumen  garantieren k\u00f6nnen.","e_code_usage_type":null,"expiry_date_policy":"Expires
-        2 years from issue date","expiry_in_months":24,"expiry_mode":"from-issue-date","logo_image_url":"https://playground.wegift.io/static/product_assets/BLUMEN-DE/BLUMEN-DE-logo.png","maximum_value":"100.00","minimum_value":"15.00","name":"123
-        Blumenversand DE","percent_discount":"10.0000","redeem_instructions_html":"<p>Der
-        gutschein kann auf der Seite \"Zahlung\" eingel\u00f6st werden. Der code eintragen
-        und auf \"Gutschein einl\u00f6sen\" klicken.</p>","redeemable_at":"online","state":"LIVE","terms_and_conditions_html":"<p>F\u00fcr
-        vollst\u00e4ndige Gesch\u00e4ftsbedingungen besuchen Sie bitte https://www.123blumenversand.de/de/content/2225_agb-und-info.html</p>","terms_and_conditions_pdf_url":"https://playground.wegift.io/public/terms/BLUMEN-DE.pdf","terms_and_conditions_url":"https://playground.wegift.io/public/terms/BLUMEN-DE.pdf","wrap_supported":false}
-
-        '
-    http_version: 
-  recorded_at: Tue, 26 Apr 2022 08:31:33 GMT
+      string: '{"approval_state":"APPROVED","discount_multiplier":"0.0130","code":"1800FL-US","name":"1800Flowers","categories":["department-stores"],"countries_redeemable_in":["US"],"currency":"USD","customer_service":{"phone_number":"+18002425353","website_url":"https://www.freshgift.com"},"state":"LIVE","payout_type":"gift_card","is_orderable":true,"availability":"realtime","gift_card":{"barcode_format":"code-128","e_code_usage_type":"url-recommended","denominations":{"available_list":null,"minimum_value":"10.00","maximum_value":"100.00","type":"open"},"redeemable_at":"online","balance_check_url":null,"website_url":"https://www.freshgift.com","assets":{"card_image_url":"https://gift.runa.io/static/product_assets/1800FL-US/1800FL-US-card.png","icon_image_url":"https://gift.runa.io/static/product_assets/1800FL-US/1800FL-US-logo.png","primary_color":"#FFFFFF"},"expiry":{"date_policy":"Does
+        not expire","in_months":0,"type":"indefinite"},"content_resources":{"description_markdown_url":"https://d2vjldeiu1zgxb.cloudfront.net/resources/1800FL-US/description.md","disclaimer_markdown_url":null,"locale":"en_GB","refund_policy_markdown_url":"https://d2vjldeiu1zgxb.cloudfront.net/resources/1800FL-US/refund_policy_markdown.md","reissuance_policy_markdown_url":"https://d2vjldeiu1zgxb.cloudfront.net/resources/1800FL-US/reissuance_policy_markdown.md","terms_buyer_markdown_url":"https://d2vjldeiu1zgxb.cloudfront.net/resources/1800FL-US/terms_buyer.md","terms_consumer_markdown_url":"https://d2vjldeiu1zgxb.cloudfront.net/resources/1800FL-US/terms_consumer.md","redemption_instructions_markdown_url":"https://d2vjldeiu1zgxb.cloudfront.net/resources/1800FL-US/redeem_markdown.md"}}}'
+    http_version:
+  recorded_at: Mon, 02 Sep 2024 12:18:42 GMT
 recorded_with: VCR 3.0.3

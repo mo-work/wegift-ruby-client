@@ -17,34 +17,37 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 403
+      message: Forbidden
     headers:
       Date:
       - Mon, 02 Sep 2024 08:05:04 GMT
       Content-Type:
       - application/json
-      Content-Length:
-      - '187'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       X-Amzn-Requestid:
-      - 58c14b16-c8ad-4f6a-87f0-bd5901003b17
+      - 25882754-4870-4101-bb76-b89b546968e7
       X-Amzn-Errortype:
-      - UnauthorizedException
+      - AccessDeniedException
       X-Amz-Apigw-Id:
-      - dd6zkHKCDoEEO1w=
+      - dd6zmEr9joEEhlg=
       Cf-Cache-Status:
       - DYNAMIC
       Server:
       - cloudflare
       Cf-Ray:
-      - 8bcbfe2cca34b11c-MAN
+      - 8bcbfe2d7c37360d-MAN
     body:
-      encoding: UTF-8
-      string: "{  \n   \"type\": \"unauthorized\",\n   \"message\": \"Missing or invalid
-        'X-Api-Key' header\",\n   \"help\": \"Generate a key on https://app.runa.io/api-keys
-        and pass using the 'X-Api-Key' header.\"\n}\n"
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "type": "forbidden",
+          "message": "You don't have permission to access the requested resource",
+          "help": "Please check the path you are trying to access is correct and you have permission to access it. Also ensure you are using the correct API key in the 'X-Api-Key' header."
+        }
     http_version:
   recorded_at: Mon, 02 Sep 2024 08:05:04 GMT
 recorded_with: VCR 3.0.3

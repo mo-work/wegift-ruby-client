@@ -2,16 +2,16 @@
 
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'wegift/version'
+require 'runa/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'wegift-ruby-client'
-  spec.version       = Wegift::VERSION
-  spec.authors       = ['Klaas Endrikat']
-  spec.email         = ['klaas.endrikat@googlemail.com']
+  spec.name          = 'runa-ruby-client'
+  spec.version       = Runa::VERSION
+  spec.authors       = ['Luke Oglesby']
+  spec.email         = ['luke.oglesby@mo.work']
 
-  spec.summary       = 'A simple Ruby client for the WEGIFT API'
-  spec.homepage      = 'https://github.com/kendrikat/wegift-ruby-client'
+  spec.summary       = 'A simple Ruby client for the Runa Connect API'
+  spec.homepage      = 'https://github.com/mo-work/runa-ruby-client'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

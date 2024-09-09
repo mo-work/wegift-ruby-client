@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-class Wegift::Products < Wegift::Response
-  PATH = '/products'
+class Runa::Products < Runa::Response
+  PATH = '/product'
 
   attr_accessor :all
 
   # Product Details List
-  # GET /api/b2b-sync/v1/products/
+  # GET /v2/product
   def get(ctx)
-    response = ctx.request(:get, PATH)
+    response = ctx.request(:get, PATH, {}, '')
     parse(response)
   end
 
   # Find all products by fieldname.
   def find(name, value)
-    Wegift::Products.new(all: all.select! { |p| p.send(name).eql?(value) })
+    Runa::Products.new(all: all.select! { |p| p.send(name).eql?(value) })
   end
 
   def parse(response)
@@ -22,8 +22,8 @@ class Wegift::Products < Wegift::Response
 
     if is_successful?
       # TODO: separate?
-      if @payload['products']
-        @all = @payload['products'].map { |p| Wegift::Product.new(p) }
+      if @payload['catalog']
+        @all = @payload['catalog'].map { |p| Runa::Product.new(p) }
       end
     else
       @all = []
