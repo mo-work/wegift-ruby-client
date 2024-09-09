@@ -10,7 +10,7 @@ class Runa::Order < Runa::Response
   attr_accessor :payment_type, :currency, :face_value, :distribution_type, :product_code, :external_ref
 
   # response/success
-  attr_accessor :code, :order_id, :status, :created_at, :payment_method, :currency, :total_price,   
+  attr_accessor :code, :order_id, :status, :created_at, :payment_method, :currency, :total_price,
                 :total_discount, :items, :redemption_url, :order_id
 
   def initialize(params = {})
@@ -69,6 +69,7 @@ class Runa::Order < Runa::Response
       @status = @payload['status']
       @total_price = @payload['total_price']
       @items = @payload['items']
+      @redemption_url = @items.first['redemption_url']
     end
 
     @order_id = @payload['id']

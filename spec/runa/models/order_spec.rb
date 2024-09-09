@@ -50,7 +50,7 @@ RSpec.describe Runa::Order do
           expect(order.order_id).to eq(nil)
         end
       end
-      
+
       it 'should return error (403)' do
         client = set_runa_client_bad_auth
         order = set_order(
@@ -95,6 +95,7 @@ RSpec.describe Runa::Order do
           expect(order.error_string).to eq(nil)
           expect(order.total_price).to eq("10.00")
           expect(order.order_id).not_to eq(nil)
+          expect(order.redemption_url).not_to eq(nil)
         end
       end
     end
