@@ -1,0 +1,1239 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://playground.runa.io/v2/product
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 02 Sep 2024 12:30:09 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - 28d2b26e-71eb-44c0-a203-6884f7c649f6
+      X-Amzn-Remapped-Content-Length:
+      - '820030'
+      X-Api-Version:
+      - '2024-02-05'
+      X-Amz-Apigw-Id:
+      - dehovFACjoEEtlA=
+      X-Amzn-Trace-Id:
+      - Root=1-66d5afd1-7ee8ba2a223664cb4aaf167d;Sampled=1;lineage=2:3ef3cab0:0
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8bcd827b99a8b0f5-MAN
+    body:
+      encoding: ASCII-8BIT
+      string: '{"catalog": [
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0130",
+            "code": "1800FL-US",
+            "name": "1800Flowers",
+            "categories": [
+              "department-stores"
+            ],
+            "countries_redeemable_in": [
+              "US"
+            ],
+            "currency": "USD",
+            "customer_service": {
+              "phone_number": "+18002425353",
+              "website_url": "https://www.freshgift.com"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "realtime",
+            "gift_card": {
+              "barcode_format": "code-128",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "10.00",
+                "maximum_value": "100.00",
+                "type": "open"
+              },
+              "redeemable_at": "online",
+              "balance_check_url": null,
+              "website_url": "https://www.freshgift.com",
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/1800FL-US/1800FL-US-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/1800FL-US/1800FL-US-logo.png",
+                "primary_color": "#FFFFFF"
+              },
+              "expiry": {
+                "date_policy": "Does not expire",
+                "in_months": 0,
+                "type": "indefinite"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/1800FL-US/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "en_GB",
+                "refund_policy_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/1800FL-US/refund_policy_markdown.md",
+                "reissuance_policy_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/1800FL-US/reissuance_policy_markdown.md",
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/1800FL-US/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/1800FL-US/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/1800FL-US/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0070",
+            "code": "36MIN-PL",
+            "name": "36 Minut",
+            "categories": [
+              "leisure-and-sports"
+            ],
+            "countries_redeemable_in": [
+              "PL"
+            ],
+            "currency": "PLN",
+            "customer_service": {
+              "phone_number": null,
+              "website_url": null
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "stocked",
+            "gift_card": {
+              "barcode_format": "code-39",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": [
+                  "200",
+                  "250",
+                  "300",
+                  "350",
+                  "400",
+                  "450",
+                  "500",
+                  "1000"
+                ],
+                "minimum_value": "200.00",
+                "maximum_value": "1000.00",
+                "type": "fixed"
+              },
+              "redeemable_at": "in-store",
+              "balance_check_url": "https://giftcardsystem.pl/",
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/36MIN-PL/36MIN-PL-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/36MIN-PL/36MIN-PL-logo.png",
+                "primary_color": "#FFFFFF"
+              },
+              "expiry": {
+                "date_policy": "Expires 3 months from issue date",
+                "in_months": 3,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/36MIN-PL/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "pl_PL",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/36MIN-PL/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/36MIN-PL/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/36MIN-PL/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0025",
+            "code": "76GAS-US",
+            "name": "76.0",
+            "categories": [
+              "travel"
+            ],
+            "countries_redeemable_in": [
+              "US"
+            ],
+            "currency": "USD",
+            "customer_service": {
+              "phone_number": null,
+              "website_url": null
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "realtime",
+            "gift_card": {
+              "barcode_format": "QR",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "5.00",
+                "maximum_value": "500.00",
+                "type": "open"
+              },
+              "redeemable_at": "in-store",
+              "balance_check_url": null,
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/76GAS-US/76GAS-US-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/76GAS-US/76GAS-US-logo.png",
+                "primary_color": "#010000"
+              },
+              "expiry": {
+                "date_policy": "Does not expire",
+                "in_months": 0,
+                "type": "indefinite"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/76GAS-US/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "en_US",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/76GAS-US/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/76GAS-US/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/76GAS-US/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0025",
+            "code": "7ELVN-SG",
+            "name": "7-Eleven",
+            "categories": [
+              "supermarkets"
+            ],
+            "countries_redeemable_in": [
+              "SG"
+            ],
+            "currency": "SGD",
+            "customer_service": {
+              "phone_number": "+6568918100",
+              "website_url": "https://www.7-eleven.com.sg/Contactus"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "stocked",
+            "gift_card": {
+              "barcode_format": "ean-13",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": [
+                  "5",
+                  "10",
+                  "20",
+                  "30",
+                  "50"
+                ],
+                "minimum_value": "5.00",
+                "maximum_value": "50.00",
+                "type": "fixed"
+              },
+              "redeemable_at": "in-store",
+              "balance_check_url": null,
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/7ELVN-SG/7ELVN-SG-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/7ELVN-SG/7ELVN-SG-logo.png",
+                "primary_color": "#FFFFFF"
+              },
+              "expiry": {
+                "date_policy": "Expires 6 months from issue date",
+                "in_months": 6,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/7ELVN-SG/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "en_GB",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/7ELVN-SG/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/7ELVN-SG/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/7ELVN-SG/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0130",
+            "code": "800PET-US",
+            "name": "1-800-PetSupplies",
+            "categories": [
+              "department-stores"
+            ],
+            "countries_redeemable_in": [
+              "US"
+            ],
+            "currency": "USD",
+            "customer_service": {
+              "phone_number": null,
+              "website_url": null
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "realtime",
+            "gift_card": {
+              "barcode_format": "pdf417",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": [
+                  "25",
+                  "50"
+                ],
+                "minimum_value": "25.00",
+                "maximum_value": "50.00",
+                "type": "fixed"
+              },
+              "redeemable_at": "online",
+              "balance_check_url": null,
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/800PET-US/800PET-US-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/800PET-US/800PET-US-logo.png",
+                "primary_color": "#51559E"
+              },
+              "expiry": {
+                "date_policy": "Does not expire",
+                "in_months": 0,
+                "type": "indefinite"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/800PET-US/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "en_US",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/800PET-US/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/800PET-US/terms_consumer.md",
+                "redemption_instructions_markdown_url": null
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0130",
+            "code": "99REST-US",
+            "name": "Ninety Nine Restaurant & Pub",
+            "categories": [
+              "food-and-drink"
+            ],
+            "countries_redeemable_in": [
+              "US"
+            ],
+            "currency": "USD",
+            "customer_service": {
+              "phone_number": "+18888207264",
+              "website_url": null
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "stocked",
+            "gift_card": {
+              "barcode_format": "ITF",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "5.00",
+                "maximum_value": "500.00",
+                "type": "open"
+              },
+              "redeemable_at": "in-store",
+              "balance_check_url": "https://www.99restaurants.com/gift-cards/",
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/99REST-US/99REST-US-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/99REST-US/99REST-US-logo.png",
+                "primary_color": "#A32035"
+              },
+              "expiry": {
+                "date_policy": "Does not expire",
+                "in_months": 0,
+                "type": "indefinite"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/99REST-US/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "en_US",
+                "refund_policy_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/99REST-US/refund_policy_markdown.md",
+                "reissuance_policy_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/99REST-US/reissuance_policy_markdown.md",
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/99REST-US/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/99REST-US/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/99REST-US/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0070",
+            "code": "ABBON-IT",
+            "name": "Abbonamenti.it",
+            "categories": [
+              "entertainment"
+            ],
+            "countries_redeemable_in": [
+              "IT"
+            ],
+            "currency": "EUR",
+            "customer_service": {
+              "phone_number": null,
+              "website_url": "https://www.abbonamenti.it/contatti"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "realtime",
+            "gift_card": {
+              "barcode_format": "DATA_MATRIX",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": [
+                  "20",
+                  "25",
+                  "30"
+                ],
+                "minimum_value": "20.00",
+                "maximum_value": "30.00",
+                "type": "fixed"
+              },
+              "redeemable_at": "all",
+              "balance_check_url": null,
+              "website_url": "https://www.abbonamenti.it/regali",
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/ABBON-IT/ABBON-IT-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/ABBON-IT/ABBON-IT-logo.png",
+                "primary_color": "#FFFFFF"
+              },
+              "expiry": {
+                "date_policy": "Expires 6 months from issue date",
+                "in_months": 6,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ABBON-IT/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "en_GB",
+                "refund_policy_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ABBON-IT/refund_policy_markdown.md",
+                "reissuance_policy_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ABBON-IT/reissuance_policy_markdown.md",
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ABBON-IT/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ABBON-IT/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ABBON-IT/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0120",
+            "code": "ABO-GB",
+            "name": "All Bar One",
+            "categories": [
+              "food-and-drink"
+            ],
+            "countries_redeemable_in": [
+              "GB"
+            ],
+            "currency": "GBP",
+            "customer_service": {
+              "phone_number": "+441214984000",
+              "website_url": "https://www.thediningoutgiftcard.co.uk/contact-us/."
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "realtime",
+            "gift_card": {
+              "barcode_format": "other",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "5.00",
+                "maximum_value": "250.00",
+                "type": "open"
+              },
+              "redeemable_at": "in-store",
+              "balance_check_url": "https://www.showmybalance.com/",
+              "website_url": "https://www.mbplc.com/giftcards/",
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/ABO/ABO-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/ABO/ABO-logo.png",
+                "primary_color": "#FFFFFF"
+              },
+              "expiry": {
+                "date_policy": "Expires 2 years from issue date",
+                "in_months": 24,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ABO-GB/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "en_GB",
+                "refund_policy_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ABO-GB/refund_policy_markdown.md",
+                "reissuance_policy_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ABO-GB/reissuance_policy_markdown.md",
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ABO-GB/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ABO-GB/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ABO-GB/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0110",
+            "code": "ADAS-AT",
+            "name": "adidas",
+            "categories": [
+              "fashion",
+              "leisure-and-sports"
+            ],
+            "countries_redeemable_in": [
+              "AT"
+            ],
+            "currency": "EUR",
+            "customer_service": {
+              "phone_number": "+431206092926",
+              "website_url": "https://www.adidas.at/hilfe"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "realtime",
+            "gift_card": {
+              "barcode_format": null,
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "0.01",
+                "maximum_value": "500.00",
+                "type": "open"
+              },
+              "redeemable_at": "all",
+              "balance_check_url": null,
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/ADAS-AT/ADAS-AT-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/ADAS-AT/ADAS-AT-logo.png",
+                "primary_color": "#000000"
+              },
+              "expiry": {
+                "date_policy": "Expires 3 years from issue date",
+                "in_months": 36,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-AT/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "de_DE",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-AT/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-AT/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-AT/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0110",
+            "code": "ADAS-BE",
+            "name": "adidas",
+            "categories": [
+              "fashion",
+              "leisure-and-sports"
+            ],
+            "countries_redeemable_in": [
+              "BE"
+            ],
+            "currency": "EUR",
+            "customer_service": {
+              "phone_number": "+3225855328",
+              "website_url": "https://www.adidas.be/fr/aide"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "realtime",
+            "gift_card": {
+              "barcode_format": "code-128",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "0.01",
+                "maximum_value": "500.00",
+                "type": "open"
+              },
+              "redeemable_at": "all",
+              "balance_check_url": null,
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/ADAS-BE/ADAS-BE-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/ADAS-BE/ADAS-BE-logo.png",
+                "primary_color": "#000000"
+              },
+              "expiry": {
+                "date_policy": "Expires 3 years from issue date",
+                "in_months": 36,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-BE/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "fr_FR",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-BE/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-BE/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-BE/redeem_markdown.md"
+              }
+            }
+          }
+        ],
+        "pagination": {
+          "cursors": {
+            "before": "1800FL-US",
+            "after": "ADAS-CZ"
+          },
+          "page": {
+            "limit": 10
+          }
+        }
+      }'
+    http_version:
+  recorded_at: Mon, 02 Sep 2024 12:30:09 GMT
+- request:
+    method: get
+    uri: https://playground.runa.io/v2/product?after=ADAS-CZ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 02 Sep 2024 12:30:09 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - 28d2b26e-71eb-44c0-a203-6884f7c649f6
+      X-Amzn-Remapped-Content-Length:
+      - '820030'
+      X-Api-Version:
+      - '2024-02-05'
+      X-Amz-Apigw-Id:
+      - dehovFACjoEEtlA=
+      X-Amzn-Trace-Id:
+      - Root=1-66d5afd1-7ee8ba2a223664cb4aaf167d;Sampled=1;lineage=2:3ef3cab0:0
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8bcd827b99a8b0f5-MAN
+    body:
+      encoding: ASCII-8BIT
+      string: '{"catalog": [
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0050",
+            "code": "ADAS-CZ",
+            "name": "ADIDAS",
+            "categories": [
+              "leisure-and-sports"
+            ],
+            "countries_redeemable_in": [
+              "CZ"
+            ],
+            "currency": "CZK",
+            "customer_service": {
+              "phone_number": null,
+              "website_url": "https://www.adidas.cz/contact.html"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "realtime",
+            "gift_card": {
+              "barcode_format": "code-128",
+              "e_code_usage_type": "url-only",
+              "denominations": {
+                "available_list": [
+                  "500.00",
+                  "1000.00"
+                ],
+                "minimum_value": "500.00",
+                "maximum_value": "1000.00",
+                "type": "fixed"
+              },
+              "redeemable_at": "online",
+              "balance_check_url": null,
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/ADAS-CZ/ADAS-CZ-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/ADAS-CZ/ADAS-CZ-logo.png",
+                "primary_color": "#FFFFFF"
+              },
+              "expiry": {
+                "date_policy": "Expires 3 years from issue date",
+                "in_months": 36,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-CZ/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "cs_CZ",
+                "refund_policy_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-CZ/refund_policy_markdown.md",
+                "reissuance_policy_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-CZ/reissuance_policy_markdown.md",
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-CZ/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-CZ/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-CZ/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0110",
+            "code": "ADAS-DE",
+            "name": "adidas",
+            "categories": [
+              "fashion",
+              "leisure-and-sports"
+            ],
+            "countries_redeemable_in": [
+              "DE"
+            ],
+            "currency": "EUR",
+            "customer_service": {
+              "phone_number": "+4991326464101",
+              "website_url": "https://www.adidas.de/hilfe"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "stocked",
+            "gift_card": {
+              "barcode_format": "code-128",
+              "e_code_usage_type": "url-only",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "0.01",
+                "maximum_value": "500.00",
+                "type": "open"
+              },
+              "redeemable_at": "all",
+              "balance_check_url": null,
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/ADAS-DE/ADAS-DE-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/ADAS-DE/ADAS-DE-logo.png",
+                "primary_color": "#000000"
+              },
+              "expiry": {
+                "date_policy": "Expires 3 years from issue date",
+                "in_months": 36,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-DE/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "de_DE",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-DE/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-DE/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-DE/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0110",
+            "code": "ADAS-DK",
+            "name": "adidas",
+            "categories": [
+              "fashion",
+              "leisure-and-sports"
+            ],
+            "countries_redeemable_in": [
+              "DK"
+            ],
+            "currency": "DKK",
+            "customer_service": {
+              "phone_number": null,
+              "website_url": "https://www.adidas.dk/hjaelp"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "realtime",
+            "gift_card": {
+              "barcode_format": "code-128",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "0.01",
+                "maximum_value": "3500.00",
+                "type": "open"
+              },
+              "redeemable_at": "all",
+              "balance_check_url": null,
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/ADAS-DK/ADAS-DK-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/ADAS-DK/ADAS-DK-logo.png",
+                "primary_color": "#000000"
+              },
+              "expiry": {
+                "date_policy": "Expires 3 years from issue date",
+                "in_months": 36,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-DK/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "da_DK",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-DK/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-DK/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-DK/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0110",
+            "code": "ADAS-ES",
+            "name": "adidas",
+            "categories": [
+              "fashion",
+              "leisure-and-sports"
+            ],
+            "countries_redeemable_in": [
+              "ES"
+            ],
+            "currency": "EUR",
+            "customer_service": {
+              "phone_number": "+34919030052",
+              "website_url": "https://www.adidas.es/ayuda"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "stocked",
+            "gift_card": {
+              "barcode_format": "code-128",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "0.01",
+                "maximum_value": "500.00",
+                "type": "open"
+              },
+              "redeemable_at": "all",
+              "balance_check_url": null,
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/ADAS-ES/ADAS-ES-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/ADAS-ES/ADAS-ES-logo.png",
+                "primary_color": "#000000"
+              },
+              "expiry": {
+                "date_policy": "Expires 3 years from issue date",
+                "in_months": 36,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-ES/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "es_ES",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-ES/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-ES/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-ES/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0110",
+            "code": "ADAS-FR",
+            "name": "adidas",
+            "categories": [
+              "fashion",
+              "leisure-and-sports"
+            ],
+            "countries_redeemable_in": [
+              "FR"
+            ],
+            "currency": "EUR",
+            "customer_service": {
+              "phone_number": "+33187153135",
+              "website_url": "https://www.adidas.fr/aide"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "realtime",
+            "gift_card": {
+              "barcode_format": "code-128",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "0.01",
+                "maximum_value": "500.00",
+                "type": "open"
+              },
+              "redeemable_at": "all",
+              "balance_check_url": null,
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/ADAS-FR/ADAS-FR-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/ADAS-FR/ADAS-FR-logo.png",
+                "primary_color": "#000000"
+              },
+              "expiry": {
+                "date_policy": "Expires 3 years from issue date",
+                "in_months": 36,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-FR/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "fr_FR",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-FR/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-FR/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-FR/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0110",
+            "code": "ADAS-GB",
+            "name": "adidas",
+            "categories": [
+              "fashion",
+              "leisure-and-sports"
+            ],
+            "countries_redeemable_in": [
+              "GB"
+            ],
+            "currency": "GBP",
+            "customer_service": {
+              "phone_number": "+442038806310",
+              "website_url": "https://www.adidas.co.uk/help"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "stocked",
+            "gift_card": {
+              "barcode_format": "code-128",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "0.01",
+                "maximum_value": "500.00",
+                "type": "open"
+              },
+              "redeemable_at": "all",
+              "balance_check_url": "https://wbiprod.storedvalue.com/WBI/lookupservlet?language=en&host=shop.adidas.co.uk",
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/ADAS-GB/ADAS-GB-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/ADAS-GB/ADAS-GB-logo.png",
+                "primary_color": "#000000"
+              },
+              "expiry": {
+                "date_policy": "Expires 3 years from issue date",
+                "in_months": 36,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-GB/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "en_GB",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-GB/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-GB/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-GB/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0110",
+            "code": "ADAS-IE",
+            "name": "adidas",
+            "categories": [
+              "fashion",
+              "leisure-and-sports"
+            ],
+            "countries_redeemable_in": [
+              "IE"
+            ],
+            "currency": "EUR",
+            "customer_service": {
+              "phone_number": "+353818294003",
+              "website_url": "https://www.adidas.ie/help"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "realtime",
+            "gift_card": {
+              "barcode_format": "code-128",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "0.01",
+                "maximum_value": "500.00",
+                "type": "open"
+              },
+              "redeemable_at": "all",
+              "balance_check_url": null,
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/ADAS-IE/ADAS-IE-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/ADAS-IE/ADAS-IE-logo.png",
+                "primary_color": "#000000"
+              },
+              "expiry": {
+                "date_policy": "Expires 3 years from issue date",
+                "in_months": 36,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-IE/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "en_IE",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-IE/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-IE/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-IE/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0110",
+            "code": "ADAS-NL",
+            "name": "adidas",
+            "categories": [
+              "fashion",
+              "leisure-and-sports"
+            ],
+            "countries_redeemable_in": [
+              "NL"
+            ],
+            "currency": "EUR",
+            "customer_service": {
+              "phone_number": "+31707006359",
+              "website_url": "https://www.adidas.nl/help"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "realtime",
+            "gift_card": {
+              "barcode_format": "code-128",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "0.01",
+                "maximum_value": "500.00",
+                "type": "open"
+              },
+              "redeemable_at": "all",
+              "balance_check_url": null,
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/ADAS-NL/ADAS-NL-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/ADAS-NL/ADAS-NL-logo.png",
+                "primary_color": "#000000"
+              },
+              "expiry": {
+                "date_policy": "Expires 3 years from issue date",
+                "in_months": 36,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-NL/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "nl_NL",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-NL/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-NL/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-NL/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0110",
+            "code": "ADAS-NO",
+            "name": "adidas",
+            "categories": [
+              "fashion",
+              "leisure-and-sports"
+            ],
+            "countries_redeemable_in": [
+              "NO"
+            ],
+            "currency": "NOK",
+            "customer_service": {
+              "phone_number": null,
+              "website_url": "https://www.adidas.no/hjelp"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "stocked",
+            "gift_card": {
+              "barcode_format": "code-128",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "0.01",
+                "maximum_value": "5900.00",
+                "type": "open"
+              },
+              "redeemable_at": "all",
+              "balance_check_url": null,
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/ADAS-NO/ADAS-NO-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/ADAS-NO/ADAS-NO-logo.png",
+                "primary_color": "#000000"
+              },
+              "expiry": {
+                "date_policy": "Expires 3 years from issue date",
+                "in_months": 36,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-NO/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "nb_NO",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-NO/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-NO/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-NO/redeem_markdown.md"
+              }
+            }
+          },
+          {
+            "approval_state": "APPROVED",
+            "discount_multiplier": "0.0110",
+            "code": "ADAS-PT",
+            "name": "adidas",
+            "categories": [
+              "fashion",
+              "leisure-and-sports"
+            ],
+            "countries_redeemable_in": [
+              "PT"
+            ],
+            "currency": "EUR",
+            "customer_service": {
+              "phone_number": null,
+              "website_url": "https://www.adidas.pt/ajuda"
+            },
+            "state": "LIVE",
+            "payout_type": "gift_card",
+            "is_orderable": true,
+            "availability": "realtime",
+            "gift_card": {
+              "barcode_format": "code-128",
+              "e_code_usage_type": "url-recommended",
+              "denominations": {
+                "available_list": null,
+                "minimum_value": "0.01",
+                "maximum_value": "500.00",
+                "type": "open"
+              },
+              "redeemable_at": "all",
+              "balance_check_url": null,
+              "website_url": null,
+              "assets": {
+                "card_image_url": "https://gift.runa.io/static/product_assets/ADAS-PT/ADAS-PT-card.png",
+                "icon_image_url": "https://gift.runa.io/static/product_assets/ADAS-PT/ADAS-PT-logo.png",
+                "primary_color": "#000000"
+              },
+              "expiry": {
+                "date_policy": "Expires 3 years from issue date",
+                "in_months": 36,
+                "type": "from-issue-date"
+              },
+              "content_resources": {
+                "description_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-PT/description.md",
+                "disclaimer_markdown_url": null,
+                "locale": "pt_PT",
+                "refund_policy_markdown_url": null,
+                "reissuance_policy_markdown_url": null,
+                "terms_buyer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-PT/terms_buyer.md",
+                "terms_consumer_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-PT/terms_consumer.md",
+                "redemption_instructions_markdown_url": "https://d2vjldeiu1zgxb.cloudfront.net/resources/ADAS-PT/redeem_markdown.md"
+              }
+            }
+          }
+        ],
+        "pagination": {
+          "cursors": {
+            "before": "ADAS-CZ",
+            "after": null
+          },
+          "page": {
+            "limit": 10
+          }
+        }
+      }'
+    http_version:
+  recorded_at: Mon, 02 Sep 2024 12:30:09 GMT
+recorded_with: VCR 3.0.3
