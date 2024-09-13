@@ -35,6 +35,7 @@ RSpec.describe Runa::Product do
           expect(products.class).to eq(Runa::Products)
           expect(products.all.is_a?(Array)).to eq(true)
           expect(products.all.first.class).to eq(Runa::Product)
+          expect(products.all.length).to eq(20)
           expect(products.status).to eq(Runa::Response::STATUS[:completed])
         end
       end
