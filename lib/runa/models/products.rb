@@ -8,8 +8,24 @@ class Runa::Products < Runa::Response
   # Product Details List
   # GET /v2/product
   def get(ctx)
-    response = ctx.request(:get, PATH, {}, '')
-    parse(response)
+    @all = []
+    @after_key = nil
+
+    loop do
+      options = {}
+      if !@after_key.nil?
+        options = {
+          after: @after_key
+        }
+      end
+      response = ctx.request(:get, PATH, options, '')
+      parse(response)
+      if @after_key.nil?
+        break
+      end
+    end
+
+    self
   end
 
   # Find all products by fieldname.
@@ -23,12 +39,11 @@ class Runa::Products < Runa::Response
     if is_successful?
       # TODO: separate?
       if @payload['catalog']
-        @all = @payload['catalog'].map { |p| Runa::Product.new(p) }
+          @all.concat(@payload['catalog'].map { |p| Runa::Product.new(p) })
       end
+      @after_key = @payload['pagination']['cursors']['after']
     else
       @all = []
     end
-
-    self
   end
 end
