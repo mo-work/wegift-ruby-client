@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://playground.runa.io/v2/product?limit=10
+    uri: https://playground.runa.io/v2/product
     body:
       encoding: US-ASCII
       string: ''
@@ -626,7 +626,7 @@ http_interactions:
   recorded_at: Mon, 02 Sep 2024 12:30:09 GMT
 - request:
     method: get
-    uri: https://playground.runa.io/v2/product?limit=10&after=ADAS-CZ
+    uri: https://playground.runa.io/v2/product?after=ADAS-CZ
     body:
       encoding: US-ASCII
       string: ''
@@ -1227,7 +1227,7 @@ http_interactions:
         "pagination": {
           "cursors": {
             "before": "ADAS-CZ",
-            "after": "ADAS-PT"
+            "after": null
           },
           "page": {
             "limit": 10

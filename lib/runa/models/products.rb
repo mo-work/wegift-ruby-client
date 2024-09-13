@@ -12,8 +12,13 @@ class Runa::Products < Runa::Response
     @after_key = nil
 
     loop do
-      path = @after_key.nil? ? "#{PATH}" : "#{PATH}?after=#{@after_key}"
-      response = ctx.request(:get, path, {}, '')
+      options = {}
+      if !@after_key.nil?
+        options = {
+          after: @after_key
+        }
+      end
+      response = ctx.request(:get, PATH, options, '')
       parse(response)
       if @after_key.nil?
         break
